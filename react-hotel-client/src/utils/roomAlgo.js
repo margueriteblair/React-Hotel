@@ -10,6 +10,14 @@ module.exports = {
                 })
             }
         }
+        let chunkedArr = [];
+        let index = 0;
+        while (index < allRooms.length) {
+            chunkedArr.push(allRooms.slice(index, numRooms+index))
+            index += numRooms;
+        }
+        allRooms = chunkedArr;
+        console.log(allRooms)
         return allRooms;
 
     }
