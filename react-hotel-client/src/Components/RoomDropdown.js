@@ -1,15 +1,18 @@
 import React from 'react'
-import {roomAlgorithm} from '../utils/roomAlgo'
+import roomAlgorithm from '../utils/roomAlgo'
 
 export default function RoomDropdown() {
+    const {rentARoom} = roomAlgorithm;
+    let roomList = rentARoom(4, 4);
     return (
-        <select>
+        <select style={{height: 30, width: 200}}>
             {
                 roomList.map((room) => {
                     return (
                         <option
                         value={room.room}
-                    >{room.room}-{room.price}</option>
+                        style={{borderRadius: 3, height: 30, width: 170}}
+                    >Room: {room.room} - ${room.price}</option>
                     )
                 })
             }
