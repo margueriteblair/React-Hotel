@@ -10,7 +10,6 @@ module.exports = {
                 })
             }
         }
-        console.log(allRooms)
         return allRooms;
 
     }
