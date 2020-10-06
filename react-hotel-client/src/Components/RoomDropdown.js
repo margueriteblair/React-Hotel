@@ -38,8 +38,9 @@ export default function RoomDropdown() {
                    return (
                 <div> */}
                     <select style={{height: 30, width: 200}}>
-                    {
-                        roomList.map((room) => {
+                    {   
+                        // roomList = roomList.flat();
+                        [...roomList.flat()].map((room) => {
                             return (
                                 <option
                                 value={room.room}
