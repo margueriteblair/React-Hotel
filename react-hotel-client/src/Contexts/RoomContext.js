@@ -8,7 +8,7 @@ export default function RoomContextProvider(props) {
     const {rentARoom} = roomAlgorithm;
     const [rooms, setRooms] = useState(rentARoom(4, 4))
     useEffect(() => {
-        set("allRooms", JSON.stringify(rooms))
+        set("allAvailableRooms", JSON.stringify(rooms))
     }, [rooms])
 
     return (
