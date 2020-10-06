@@ -3,6 +3,7 @@ import roomAlgorithm from '../utils/roomAlgo'
 import {RoomContext} from '../Contexts/RoomContext'
 import Button from './Button'
 import NavBar from './NavBar'
+import Form from './Form';
 
 export default function RoomDropdown() {
     const {setRooms} = useContext(RoomContext);
@@ -41,7 +42,6 @@ export default function RoomDropdown() {
                 <div> */}
                     <select style={{height: 30, width: 200}}>
                     {   
-                        // roomList = roomList.flat();
                         [...roomList.flat()].map((room) => {
                             return (
                                 <option
@@ -55,6 +55,7 @@ export default function RoomDropdown() {
                         })
                     }
                 </select>
+                <Form/>
                 <NavBar/>
                 {/* </div> */}
                    
