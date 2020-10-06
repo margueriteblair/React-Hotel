@@ -14,6 +14,15 @@ function rentARoom(numFloors, numRooms) {
             })
         }
     }
+    // console.log(allRooms);
+
+    let chunkedArr = [];
+    let index = 0;
+    while (index < allRooms.length) {
+        chunkedArr.push(allRooms.slice(index, numRooms+index))
+        index += numRooms;
+    }
+    allRooms = chunkedArr;
     console.log(allRooms)
     return allRooms;
 }

@@ -25,9 +25,9 @@ export default function RoomDropdown() {
     }
     return (
     <div>
-        {
+        {/* {
            () => {
-               if (roomList === null) {
+               if (roomList === null || roomList.length === 0) {
                    return (
                        <div>
                        <h3>Apologies! No rooms available today.</h3>
@@ -36,7 +36,7 @@ export default function RoomDropdown() {
                    )
                } else {
                    return (
-                <div>
+                <div> */}
                     <select style={{height: 30, width: 200}}>
                     {
                         roomList.map((room) => {
@@ -62,13 +62,13 @@ export default function RoomDropdown() {
                     text="Check Out"
                     onClick={checkOut}
                     />
-                </div>
-                </div>
+                    </div>
+                {/* </div> */}
                    )
-               }
-           }
+               {/* } */}
+           {/* } */}
 
-        }
+        {/* } */}
     </div>
     )
 }
