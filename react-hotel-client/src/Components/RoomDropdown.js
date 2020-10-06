@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import roomAlgorithm from '../utils/roomAlgo'
+import {RoomContext} from '../Contexts/RoomContext'
 
 export default function RoomDropdown() {
+    // const {setRooms} = useContext(RoomContext);
     const {rentARoom} = roomAlgorithm;
     let roomList = rentARoom(4, 4);
+    // setRooms(roomList);
     return (
         <select style={{height: 30, width: 200}}>
             {
@@ -20,8 +23,3 @@ export default function RoomDropdown() {
         </select>
     )
 }
-// for (let i = 0; i < roomList.length; i++) {
-//     return (
-//         <option value={roomList[i].room}>{roomList[i].room}</option>
-//     )
-//     }
