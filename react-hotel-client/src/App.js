@@ -1,14 +1,14 @@
 import React from 'react';
 import Dropdown from './Components/RoomDropdown'
-import RoomContext from './Contexts/RoomContext';
+import RoomContextProvider from './Contexts/RoomContext';
 
 function App() {
   return (
     <div className="App">
-    <RoomContext>
+    <RoomContextProvider>
       <h1>Welcome to the React Hotel, Gremlins!</h1>
       <Dropdown/>
-    </RoomContext>
+    </RoomContextProvider>
     </div>
   );
 }

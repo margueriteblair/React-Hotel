@@ -15,7 +15,7 @@ export default function NavBar() {
                 }
             }
         }
-        setRooms(roomList)
+        setRooms(roomList) //why does this need to be clicked twice to reset local storage
         console.log(roomList)
     }
 
