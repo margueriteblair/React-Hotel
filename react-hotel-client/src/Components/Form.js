@@ -14,7 +14,6 @@ export default function Form() {
             placeholder="Last Name"
             id="lastName"
             ></input>
-            {/* put choices in here */}
         </div>
     )
 }

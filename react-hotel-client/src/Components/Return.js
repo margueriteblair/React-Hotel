@@ -5,7 +5,6 @@ import {get, set} from '../utils/localStorage';
 export default function Return() {
     let {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
     const checkOut = () => {
-        //use a copy of the state
         const newRooms = [...rooms];
         const newBookedRooms = [...bookedRooms];
         const returnForm = Array.from(document.getElementById("returnForm").children);

@@ -27,7 +27,6 @@ export default function Rent() {
                     break;
                 }
             }
-            // break;
         }
         setBookedRooms(newBookedRooms)
         setRooms(newRooms);
