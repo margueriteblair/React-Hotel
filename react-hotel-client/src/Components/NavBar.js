@@ -24,8 +24,7 @@ export default function NavBar() {
         console.log(document.querySelector("select").value)
     }
     return (
-        <div>
-              <div id="button-container" style={{justifyContent: "space-around"}}>
+            <div id="button-container" style={{justifyContent: "space-around"}}>
             <Button
             text="Book A Room!"
             onClick={checkIn}
@@ -37,6 +36,5 @@ export default function NavBar() {
             onClick={() => {window.location = '/checkout'}}
             />
             </div>
-        </div>
     )
 }
