@@ -28,7 +28,6 @@ export default function RoomDropdown() {
     }
     return (
         <div>
-            <NavBar/>
         {/* {
            () => {
                if (roomList === null || roomList.length === 0) {

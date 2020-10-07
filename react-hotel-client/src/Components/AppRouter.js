@@ -9,7 +9,6 @@ export default function AppRouter() {
         <div>
         <BrowserRouter>
             <Switch>
-                
                 <Route
                 path='/' exact>
                 <Home/>
@@ -22,7 +21,6 @@ export default function AppRouter() {
                 path='/checkout' exact>
                 <Return />
                 </Route>
-
             </Switch>
         </BrowserRouter>
         </div>
