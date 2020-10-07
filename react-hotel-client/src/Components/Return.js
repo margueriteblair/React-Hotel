@@ -1,5 +1,6 @@
 import React, {useContext} from 'react'
 import {RoomContext} from '../Contexts/RoomContext';
+import {get, set} from '../utils/localStorage';
 
 export default function Return() {
     let {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
@@ -23,6 +24,13 @@ export default function Return() {
                     }
                 }
             }
+            setBookedRooms(bookedRooms);
+            setRooms(rooms);
+            set("bookedRooms", JSON.stringify(bookedRooms));
+            set("allAvailableRooms", JSON.stringify(rooms));
+            document.getElementById("returnFirstName").value = "";
+            document.getElementById("returnLastName").value = "";
+
         }
     }
     return (
