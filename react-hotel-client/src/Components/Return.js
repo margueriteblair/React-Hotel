@@ -4,30 +4,29 @@ import {get, set} from '../utils/localStorage';
 
 export default function Return() {
     let {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
-    bookedRooms = JSON.parse(localStorage.getItem("bookedRooms"));
-
     const checkOut = () => {
-        let returnForm = Array.from(document.getElementById("returnForm").children);
+        //use a copy of the state
+        const newRooms = [...rooms];
+        const newBookedRooms = [...bookedRooms];
+        const returnForm = Array.from(document.getElementById("returnForm").children);
         for (const input of returnForm) {
             if (input.value === null || input.value === "") {
                 return alert(`Unable to successfully check you out of your room due to missing fields.`)
             }
         }
+        
         const fullName = document.getElementById("returnFirstName").value + " " + document.getElementById("returnLastName").value;
-        for (let i = 0; i < bookedRooms.length; i++)  {
-            for (let j = 0; j < bookedRooms[i].length; j++) {
-                if (bookedRooms[i][j] === document.getElementById("returnDropdown").value) {
-                    if (bookedRooms[i][j].renter === fullName) {
-                        rooms[i].push(bookedRooms[i].splice(j, 1).pop());
-
+        for (let i = 0; i < newBookedRooms.length; i++)  {
+            for (let j = 0; j < newBookedRooms[i].length; j++) {
+                if (newBookedRooms[i][j] === document.getElementById("returnDropdown").value) {
+                    if (newBookedRooms[i][j].renter === fullName) {
+                        newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
                         break;
                     }
                 }
             }
-            setBookedRooms(bookedRooms);
-            setRooms(rooms);
-            set("bookedRooms", JSON.stringify(bookedRooms));
-            set("allAvailableRooms", JSON.stringify(rooms));
+            setBookedRooms(newBookedRooms);
+            setRooms(newRooms);
             document.getElementById("returnFirstName").value = "";
             document.getElementById("returnLastName").value = "";
 
@@ -36,7 +35,7 @@ export default function Return() {
     return (
         <div>
             <h1>This is the return page.</h1>
-            <select id="returnDropdown">
+            <select id="returnDropdown" style={{height: 30, width: 200, margin: 20}}>
                 {
                     [...bookedRooms.flat()].map((room) => {
                         return (

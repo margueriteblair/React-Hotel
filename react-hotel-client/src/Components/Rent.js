@@ -6,7 +6,11 @@ import Form from './Form';
 export default function Rent() {
     const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
     let bookRoom = () => {
-        let rentForm = Array.from(document.getElementById("rentForm").children)
+        const newRooms = [...rooms];
+        const newBookedRooms = [...bookedRooms];
+        const rentForm = Array.from(document.getElementById("rentForm").children)
+        console.log(rooms)
+        
         for (const input of rentForm) {
             if (input.value === null || input.value === "") {
                 return alert(`Unable to submit your booking request due to missing fields.`)
@@ -14,21 +18,19 @@ export default function Rent() {
             
         }
         const fullName = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
-        for (let i = 0; i < rooms.length; i++) {
-            for (let j = 0; j < rooms[i].length; j++) {
-                if (rooms[i][j].room == document.querySelector("select").value) {
-                    rooms[i][j].renter = fullName;
-                    bookedRooms[i].push(rooms[i].splice(j, 1).pop());
-
+        for (let i = 0; i < newRooms.length; i++) {
+            for (let j = 0; j < newRooms[i].length; j++) {
+                if (newRooms[i][j].room == document.querySelector("select").value) {
+                    newRooms[i][j].renter = fullName;
+                    newBookedRooms[i].push(newRooms[i].splice(j, 1).pop());
+                    
                     break;
                 }
             }
             // break;
         }
-        setBookedRooms(bookedRooms)
-        setRooms(rooms);
-        localStorage.setItem("bookedRooms", JSON.stringify(bookedRooms));
-        localStorage.setItem("allAvailableRooms", JSON.stringify(rooms));
+        setBookedRooms(newBookedRooms)
+        setRooms(newRooms);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
     }
@@ -42,9 +44,6 @@ export default function Rent() {
                                 <option
                                 value={room.room}
                                 style={{borderRadius: 3, height: 30, width: 170}}
-                                onClick={() => {
-                                    console.log(this.value)
-                                }}
                             >Room: {room.room} - ${room.price}</option>
                             )
                         })
