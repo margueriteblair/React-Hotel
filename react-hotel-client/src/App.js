@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
     <RoomContextProvider>
-      <h1>Welcome to the React Hotel, Gremlins!</h1>
       <NavBar/>
       <AppRouter/>
     </RoomContextProvider>

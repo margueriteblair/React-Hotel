@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import Dropdown from './RoomDropdown';
 import {RoomContext} from '../Contexts/RoomContext'
-import {set} from '../utils/localStorage'
 import Form from './Form';
 
 export default function Rent() {
@@ -28,15 +27,15 @@ export default function Rent() {
         }
         setBookedRooms(bookedRooms)
         setRooms(rooms);
-        set("bookedRooms", JSON.stringify(bookedRooms));
-        set("allAvailableRooms", JSON.stringify(rooms));
-        console.log(rooms);
-        console.log(bookedRooms);
+        localStorage.setItem("bookedRooms", JSON.stringify(bookedRooms));
+        localStorage.setItem("allAvailableRooms", JSON.stringify(rooms));
+        document.getElementById("firstName").value = "";
+        document.getElementById("lastName").value = "";
     }
     return (
-        <div>
+        <div style={{margin: 10}}>
             <h1>This is the rental page</h1>
-            <select style={{height: 30, width: 200}}>
+            <select style={{height: 30, width: 200, margin: 20}}>
                     {   
                         [...rooms.flat()].map((room) => {
                             return (

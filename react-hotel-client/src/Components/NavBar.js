@@ -24,6 +24,9 @@ export default function NavBar() {
         console.log(document.querySelector("select").value)
     }
     return (
+    <div style={{backgroundColor: "#4285f4"}}>
+        <h1>Welcome to the CareerDevs Hotel, Coders!</h1>
+
             <div id="button-container" style={{justifyContent: "space-around"}}>
             <Button
             text="Book A Room!"
@@ -36,5 +39,6 @@ export default function NavBar() {
             onClick={() => {window.location = '/checkout'}}
             />
             </div>
+        </div>
     )
 }
