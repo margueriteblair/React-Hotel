@@ -8,6 +8,7 @@ LOG:
 2020-10-06
 7:06 - Created form component
 7:52 - Editing the form component
+8:18 - Initialized the rent and return components
 
 Intermediate Final Project: React Hotel
 

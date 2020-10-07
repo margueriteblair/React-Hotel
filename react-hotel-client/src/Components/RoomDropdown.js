@@ -27,7 +27,8 @@ export default function RoomDropdown() {
         console.log(document.querySelector("select").value)
     }
     return (
-    <div>
+        <div>
+            <NavBar/>
         {/* {
            () => {
                if (roomList === null || roomList.length === 0) {
@@ -56,7 +57,6 @@ export default function RoomDropdown() {
                     }
                 </select>
                 <Form/>
-                <NavBar/>
                 {/* </div> */}
                    
                {/* } */}
