@@ -1,14 +1,18 @@
 import React from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Rent from './Rent'
 import Return from './Return'
+import Home from './Home'
 
 export default function AppRouter() {
     return (
         <div>
+        <BrowserRouter>
             <Switch>
+                
                 <Route
                 path='/' exact>
+                <Home/>
                 </Route>
                 <Route
                 path='/checkin' exact>
@@ -20,6 +24,7 @@ export default function AppRouter() {
                 </Route>
 
             </Switch>
+        </BrowserRouter>
         </div>
     )
 }

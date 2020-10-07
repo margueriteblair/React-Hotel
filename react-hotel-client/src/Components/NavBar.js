@@ -29,10 +29,12 @@ export default function NavBar() {
             <Button
             text="Book A Room!"
             onClick={checkIn}
+            onClick={window.location = './checkin'}
             />
             <Button
             text="Check Out"
             onClick={checkOut}
+            onClick={window.location = './checkout'}
             />
             </div>
         </div>
