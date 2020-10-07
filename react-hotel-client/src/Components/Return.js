@@ -15,22 +15,21 @@ export default function Return() {
         }
         
         const fullName = document.getElementById("returnFirstName").value + " " + document.getElementById("returnLastName").value;
+
+        
         for (let i = 0; i < newBookedRooms.length; i++)  {
             for (let j = 0; j < newBookedRooms[i].length; j++) {
-                console.log(newBookedRooms[i][j].room == document.getElementById("returnDropdown").value)
-                console.log(newBookedRooms[i][j].renter === fullName);
                 if (newBookedRooms[i][j].room == document.getElementById("returnDropdown").value && newBookedRooms[i][j].renter === fullName) {
-                        console.log("correct name")
                         newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
                         break;
                 }
             }
-            setBookedRooms(newBookedRooms);
-            setRooms(newRooms);
-            document.getElementById("returnFirstName").value = "";
-            document.getElementById("returnLastName").value = "";
-
+            
         }
+        setBookedRooms(newBookedRooms);
+        setRooms(newRooms);
+        document.getElementById("returnFirstName").value = "";
+        document.getElementById("returnLastName").value = "";
     }
     return (
         <div>
