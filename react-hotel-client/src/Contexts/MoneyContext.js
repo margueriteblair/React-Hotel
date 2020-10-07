@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import {set, get} from '../utils/localStorage'
 
-export const MoneyContext = React.createContext(props);
+export const MoneyContext = React.createContext();
 
-export default function MoneyContextProvider() {
+export default function MoneyContextProvider(props) {
 
     const [balance, setBalance] = useState(() => {
-        get("balance", 500);
+        return get("balance", 500);
     })
 
     useEffect(() => {

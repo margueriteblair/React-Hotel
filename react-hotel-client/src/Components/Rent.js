@@ -1,13 +1,15 @@
 import React, {useContext} from 'react'
-import Dropdown from './RoomDropdown';
 import {RoomContext} from '../Contexts/RoomContext'
 import Form from './Form';
+import {MoneyContext} from '../Contexts/MoneyContext'
 
 export default function Rent() {
     const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
+    const {balance, setBalance} = useContext(MoneyContext);
     const bookRoom = () => {
         const newRooms = [...rooms];
         const newBookedRooms = [...bookedRooms];
+        let newBalance = balance;
         const rentForm = Array.from(document.getElementById("rentForm").children)
         console.log(rooms)
         
@@ -22,7 +24,9 @@ export default function Rent() {
             for (let j = 0; j < newRooms[i].length; j++) {
                 if (newRooms[i][j].room == document.querySelector("select").value) {
                     newRooms[i][j].renter = fullName;
+                    newBalance = newBalance - newRooms[i][j].price - 25;
                     newBookedRooms[i].push(newRooms[i].splice(j, 1).pop());
+                    console.log(newBalance);
                     
                     break;
                 }
@@ -30,6 +34,7 @@ export default function Rent() {
         }
         setBookedRooms(newBookedRooms)
         setRooms(newRooms);
+        setBalance(newBalance);
         document.getElementById("firstName").value = "";
         document.getElementById("lastName").value = "";
     }
