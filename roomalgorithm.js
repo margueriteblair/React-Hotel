@@ -23,8 +23,7 @@ function rentARoom(numFloors, numRooms) {
         index += numRooms;
     }
     allRooms = chunkedArr;
-    console.log(allRooms)
     return allRooms;
 }
 
-rentARoom(4, 4);
+console.log(rentARoom(4, 4));

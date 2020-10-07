@@ -10,22 +10,17 @@ export default function RoomDropdown() {
     let roomList = JSON.parse(localStorage.getItem("allAvailableRooms"));
     let bookedRooms = [];
 
-    const checkIn = () => {
-        for (let i = 0; i < roomList.length; i++) {
-            for (let j = 0; j < roomList[i].length; j++) {
-                if (roomList[i][j].room == document.querySelector("select").value) {
-                    roomList[i].splice(j, 1);
-                }
-            }
-        }
-        setRooms(roomList)
-        console.log(roomList)
-    }
-
-    const checkOut = () => {
-        console.log("checking out")
-        console.log(document.querySelector("select").value)
-    }
+    // const checkIn = () => {
+    //     for (let i = 0; i < roomList.length; i++) {
+    //         for (let j = 0; j < roomList[i].length; j++) {
+    //             if (roomList[i][j].room == document.querySelector("select").value) {
+    //                 roomList[i].splice(j, 1);
+    //             }
+    //         }
+    //     }
+    //     setRooms(roomList)
+    //     console.log(roomList)
+    // }
     return (
         <div>
         {/* {
