@@ -1,14 +1,27 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {RoomContext} from '../Contexts/RoomContext';
 
 export default function Return() {
+    let {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
+    bookedRooms = JSON.parse(localStorage.getItem("bookedRooms"));
     return (
         <div>
             <h1>This is the return page.</h1>
-            <input
-            placeholder="Which room are you checking out of?"
-            type="number"
-            >
-            </input>
+            <select>
+                {
+                    [...bookedRooms.flat()].map((room) => {
+                        return (
+                            <option
+                            value={room.room}
+                            style={{borderRadius: 3, height: 30, width: 170}}
+                            onClick={() => {
+                                console.log(this.value)
+                            }}
+                        >Room: {room.room} - ${room.price}</option>
+                        )
+                    })
+                }
+            </select>
             <button type="submit">Check Out</button>
             <br>
             </br>

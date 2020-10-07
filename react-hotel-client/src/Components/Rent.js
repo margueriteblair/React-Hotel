@@ -1,9 +1,10 @@
 import React, {useContext} from 'react'
 import Dropdown from './RoomDropdown';
 import {RoomContext} from '../Contexts/RoomContext'
+import {set} from '../utils/localStorage'
 
 export default function Rent() {
-    const {rooms, setRooms} = useContext(RoomContext)
+    const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
     let bookRoom = () => {
         let rentForm = Array.from(document.getElementById("rentForm").children)
         for (const input of rentForm) {
@@ -17,15 +18,19 @@ export default function Rent() {
             for (let j = 0; j < rooms[i].length; j++) {
                 if (rooms[i][j].room == document.querySelector("select").value) {
                     rooms[i][j].renter = fullName;
-                    console.log(rooms[i][j])
-                    
+                    bookedRooms[i].push(rooms[i].splice(j, 1).pop());
+
                     break;
                 }
             }
-            break;
+            // break;
         }
+        setBookedRooms(bookedRooms)
         setRooms(rooms);
+        set("bookedRooms", JSON.stringify(bookedRooms));
+        set("allAvailableRooms", JSON.stringify(rooms));
         console.log(rooms);
+        console.log(bookedRooms);
     }
     return (
         <div>
