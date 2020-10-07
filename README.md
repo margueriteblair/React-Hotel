@@ -4,6 +4,10 @@ Room prices equation; Price =
 Room 202 = ( 50*2 ) + ( 10*2 - 10 ) + 45 = $155
 Room 301 = ( 50*3 ) + ( 10*1 - 10 ) + 45 = $200
 
+LOG:
+2020-10-06
+7:06 - Created form component
+7:52 - Editing the form component
 
 Intermediate Final Project: React Hotel
 
