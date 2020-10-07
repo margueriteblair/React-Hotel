@@ -1,12 +1,15 @@
 import React, {useContext} from 'react'
 import {RoomContext} from '../Contexts/RoomContext';
 import {get, set} from '../utils/localStorage';
+import { MoneyContext } from '../Contexts/MoneyContext';
 
 export default function Return() {
     let {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
+    let {balance, setBalance} = useContext(MoneyContext)
     const checkOut = () => {
         const newRooms = [...rooms];
         const newBookedRooms = [...bookedRooms];
+        let newBalance = balance;
         const returnForm = Array.from(document.getElementById("returnForm").children);
         for (const input of returnForm) {
             if (input.value === null || input.value === "") {
@@ -15,11 +18,10 @@ export default function Return() {
         }
         
         const fullName = document.getElementById("returnFirstName").value + " " + document.getElementById("returnLastName").value;
-
-        
         for (let i = 0; i < newBookedRooms.length; i++)  {
             for (let j = 0; j < newBookedRooms[i].length; j++) {
                 if (newBookedRooms[i][j].room == document.getElementById("returnDropdown").value && newBookedRooms[i][j].renter === fullName) {
+                        newBalance = newBalance + 25;
                         newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
                         break;
                 }
@@ -28,6 +30,7 @@ export default function Return() {
         }
         setBookedRooms(newBookedRooms);
         setRooms(newRooms);
+        setBalance(newBalance);
         document.getElementById("returnFirstName").value = "";
         document.getElementById("returnLastName").value = "";
     }
