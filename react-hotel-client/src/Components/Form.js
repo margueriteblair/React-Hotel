@@ -3,17 +3,16 @@ import Button from './Button';
 
 export default function Form() {
     return (
-        <div style={{marginTop: 20}}>
+        <div style={{marginTop: 20}} id="rentForm">
             <input
             name="firstName"
             placeholder="First Name"
+            id="firstName"
             ></input>
             <input
             name="lastName"
             placeholder="Last Name"
-            ></input>
-            <input
-            placeholder="SSC, Mother's Maiden Name, yada, yada.."
+            id="lastName"
             ></input>
             {/* put choices in here */}
         </div>

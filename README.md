@@ -10,6 +10,7 @@ LOG:
 7:52 - Editing the form component
 8:18 - Initialized the rent and return components
 8:46 - Created an AppRouter component to allow seamless flow between Rent and Return Components.
+9:15 - Fleshed out Return and Rent pages.
 
 Intermediate Final Project: React Hotel
 
