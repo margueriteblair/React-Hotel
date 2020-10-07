@@ -2,6 +2,7 @@ import React, {useContext} from 'react'
 import Dropdown from './RoomDropdown';
 import {RoomContext} from '../Contexts/RoomContext'
 import {set} from '../utils/localStorage'
+import Form from './Form';
 
 export default function Rent() {
     const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
@@ -35,7 +36,23 @@ export default function Rent() {
     return (
         <div>
             <h1>This is the rental page</h1>
-            <Dropdown />
+            <select style={{height: 30, width: 200}}>
+                    {   
+                        [...rooms.flat()].map((room) => {
+                            return (
+                                <option
+                                value={room.room}
+                                style={{borderRadius: 3, height: 30, width: 170}}
+                                onClick={() => {
+                                    console.log(this.value)
+                                }}
+                            >Room: {room.room} - ${room.price}</option>
+                            )
+                        })
+                    }
+                </select>
+                <Form/>
+
             <button type="submit" style={{marginTop: 7}}
             onClick={bookRoom}
             >Book Room Now</button>

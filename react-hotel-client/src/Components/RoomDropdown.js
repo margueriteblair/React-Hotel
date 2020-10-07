@@ -1,8 +1,6 @@
 import React, {useContext} from 'react'
 import roomAlgorithm from '../utils/roomAlgo'
 import {RoomContext} from '../Contexts/RoomContext'
-import Button from './Button'
-import NavBar from './NavBar'
 import Form from './Form';
 
 export default function RoomDropdown() {

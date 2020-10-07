@@ -22,6 +22,12 @@ export default function Return() {
                     })
                 }
             </select>
+            <div id="checkOutForm" style={{margin: 5}}>
+                <h3>Please enter the name you used to book the room to check out:</h3>
+                <input type="text" id="firstName" placeholder="First Name"></input>
+                <input type="text" id="lastName" placeholder="Last Name"></input>
+
+            </div>
             <button type="submit">Check Out</button>
             <br>
             </br>
