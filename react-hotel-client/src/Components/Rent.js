@@ -18,9 +18,9 @@ export default function Rent() {
                 if (rooms[i][j].room == document.querySelector("select").value) {
                     rooms[i][j].renter = fullName;
                     console.log(rooms[i][j])
+                    
                     break;
                 }
-
             }
             break;
         }
