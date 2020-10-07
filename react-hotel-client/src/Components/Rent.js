@@ -5,7 +5,7 @@ import Form from './Form';
 
 export default function Rent() {
     const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
-    let bookRoom = () => {
+    const bookRoom = () => {
         const newRooms = [...rooms];
         const newBookedRooms = [...bookedRooms];
         const rentForm = Array.from(document.getElementById("rentForm").children)
