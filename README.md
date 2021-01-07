@@ -1,15 +1,14 @@
-LOG:
-2020-10-06
-7:06 - Created form component
-7:52 - Editing the form component
-8:18 - Initialized the rent and return components
-8:46 - Created an AppRouter component to allow seamless flow between Rent and Return Components.
-9:15 - Fleshed out Return and Rent pages.
+LOG:<br>
+2020-10-06<br>
+7:06 - Created form component<br>
+7:52 - Editing the form component<br>
+8:18 - Initialized the rent and return components<br>
+8:46 - Created an AppRouter component to allow seamless flow between Rent and Return Components.<br>
+9:15 - Fleshed out Return and Rent pages.<br>
 
 
-Room prices equation; Price = 
-( $50 x floorNum ) + ( $10 x roomNum(ones place) - $10) + fixedDeposit($45)
-
+Room prices equation; Price = ( $50 x floorNum ) + ( $10 x roomNum(ones place) - $10) + fixedDeposit($45)<br>
+Examples:<br>
 Room 202 = ( 50*2 ) + ( 10*2 - 10 ) + 45 = $155
 Room 301 = ( 50*3 ) + ( 10*1 - 10 ) + 45 = $200
 
