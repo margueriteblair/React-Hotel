@@ -4,7 +4,8 @@ import {RoomContext} from '../Contexts/RoomContext'
 import {MoneyContext} from '../Contexts/MoneyContext'
 
 export default function NavBar() {
-    const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext);
+    const {rooms, bookedRooms} = useContext(RoomContext);
+    //no need to import setRooms and setBookedRooms from the RoomContext because they're not used in the NavBar
     const {balance, setBalance} = useContext(MoneyContext);
     return (
     <div style={{backgroundColor: "#4285f4"}}>
@@ -13,13 +14,11 @@ export default function NavBar() {
     <h3>All rooms cost the price listed as well as a $25 deposit you will get back upon checking out.</h3>
     <h3>Your current balance is: ${balance}</h3>
             <div id="button-container" style={{justifyContent: "space-around"}}>
-            <Button
-            text="Book A Room!"
+            <Button text="Book A Room!"
             onClick={() => {window.location.href = '/checkin'}}
             />
-            <Button
-            text="Check Out"
-            onClick={() => {window.location = '/checkout'}}
+            <Button text="Check Out"
+            onClick={() => {window.location.href = '/checkout'}}
             />
             </div>
         </div>
