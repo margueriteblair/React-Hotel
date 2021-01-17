@@ -1,5 +1,4 @@
 import React from 'react';
-import Dropdown from './Components/RoomDropdown'
 import RoomContextProvider from './Contexts/RoomContext';
 import AppRouter from './Components/AppRouter';
 import NavBar from './Components/NavBar';
