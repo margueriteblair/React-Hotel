@@ -44,6 +44,7 @@ export default function Rent() {
                         [...rooms.flat()].map((room) => {
                             return (
                                 <option
+                                key={room.room}
                                 value={room.room}
                                 style={{borderRadius: 3, height: 30, width: 170}}
                             >Room: {room.room} - ${room.price}</option>
@@ -52,7 +53,7 @@ export default function Rent() {
                     }
                 </select>
                 <Form/>
-            <button type="submit" style={{marginTop: 7}}nonClick={bookRoom}>Book Room Now</button>
+            <button type="submit" style={{marginTop: 7}} onClick={bookRoom}>Book Room Now</button>
         </div>
     )
 }
