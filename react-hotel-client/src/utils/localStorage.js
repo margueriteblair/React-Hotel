@@ -5,7 +5,7 @@ module.exports = {
             return savedData;
         }
         if (initial instanceof Function) return initial();
-        return initial;
+        // return initial;
     },
     set: (key, value) => {
         localStorage.setItem(key, value)

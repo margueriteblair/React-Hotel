@@ -6,6 +6,13 @@ import {MoneyContext} from '../Contexts/MoneyContext'
 export default function Rent() {
     const {rooms, setRooms, bookedRooms, setBookedRooms} = useContext(RoomContext)
     const {balance, setBalance} = useContext(MoneyContext);
+    const checkBalance = (balance, price) => {
+        if (balance - price - 25 < 0) {
+            alert(`You cannot book another room, you're out of funds my friend!`)
+            return false;
+        }
+        return true;
+    }
     const bookRoom = () => {
         const newRooms = [...rooms];
         const newBookedRooms = [...bookedRooms];
@@ -24,6 +31,8 @@ export default function Rent() {
             for (let j = 0; j < newRooms[i].length; j++) {
                 if (newRooms[i][j].room == document.querySelector("select").value) {
                     newRooms[i][j].renter = fullName;
+                    checkBalance(newBalance, newRooms[i][j].price);
+                    if (!checkBalance(newBalance, newRooms[i][j].price)) return;
                     newBalance = newBalance - newRooms[i][j].price - 25;
                     newBookedRooms[i].push(newRooms[i].splice(j, 1).pop());
                     break;
