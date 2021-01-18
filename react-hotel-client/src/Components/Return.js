@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import {RoomContext} from '../Contexts/RoomContext';
-import {get, set} from '../utils/localStorage';
 import { MoneyContext } from '../Contexts/MoneyContext';
 
 export default function Return() {
@@ -18,12 +17,15 @@ export default function Return() {
         }
         
         const fullName = document.getElementById("returnFirstName").value + " " + document.getElementById("returnLastName").value;
+
         for (let i = 0; i < newBookedRooms.length; i++)  {
             for (let j = 0; j < newBookedRooms[i].length; j++) {
                 if (newBookedRooms[i][j].room == document.getElementById("returnDropdown").value && newBookedRooms[i][j].renter === fullName) {
                         newBalance = newBalance + 25;
                         newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
                         break;
+                } else {
+                    return alert(`Something isn't quite right here! Either there's a typo in your name or the room number is wrong!`)
                 }
             }
             
