@@ -4,7 +4,7 @@ module.exports = {
         if (savedData !== null) {
             return savedData;
         }
-        // if (initial instanceof Function) return initial();
+        if (initial instanceof Function) return initial();
         return initial;
     },
     set: (key, value) => {

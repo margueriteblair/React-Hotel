@@ -20,12 +20,11 @@ export default function Return() {
 
         for (let i = 0; i < newBookedRooms.length; i++)  {
             for (let j = 0; j < newBookedRooms[i].length; j++) {
-                if (newBookedRooms[i][j].room == document.getElementById("returnDropdown").value && newBookedRooms[i][j].renter === fullName) {
+                console.log(newBookedRooms[i][j].room === parseInt(document.getElementById("returnDropdown").value) && newBookedRooms[i][j].renter === fullName)
+                if (newBookedRooms[i][j].room === parseInt(document.getElementById("returnDropdown").value) && newBookedRooms[i][j].renter === fullName) {
                         newBalance = newBalance + 25;
                         newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
                         break;
-                } else {
-                    return alert(`Something isn't quite right here! Either there's a typo in your name or the room number is wrong!`)
                 }
             }
             
