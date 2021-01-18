@@ -66,7 +66,7 @@ export default function Return() {
 
             <textarea
             placeholder="Leave a comment about your stay..."
-            style={{height: 300, width: 400, marginTop: 20}}
+            style={{height: 200, width: 400, marginTop: 20}}
             ></textarea>
         </div>
     )
