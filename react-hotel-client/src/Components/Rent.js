@@ -35,12 +35,12 @@ export default function Rent() {
                     if (!checkBalance(newBalance, newRooms[i][j].price)) return;
                     newBalance = newBalance - newRooms[i][j].price - 25;
                     newBookedRooms[i].push(newRooms[i].splice(j, 1).pop());
-                    // newBookedRooms = newBookedRooms[i].sort((a, b) => {
-                    //     return a.price - b.price;
-                    // });
-                    // newRooms = newRooms[i].sort((a, b) => {
-                    //     return a.price - b.price;
-                    // })
+                    newBookedRooms[i].sort((a, b) => {
+                        return a.price - b.price;
+                    });
+                    newRooms[i].sort((a, b) => {
+                        return a.price - b.price;
+                    })
                     break;
                 }
             }

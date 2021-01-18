@@ -20,14 +20,17 @@ export default function Return() {
 
         for (let i = 0; i < newBookedRooms.length; i++)  {
             for (let j = 0; j < newBookedRooms[i].length; j++) {
-                console.log(newBookedRooms[i][j].room === parseInt(document.getElementById("returnDropdown").value) && newBookedRooms[i][j].renter === fullName)
                 if (newBookedRooms[i][j].room === parseInt(document.getElementById("returnDropdown").value) && newBookedRooms[i][j].renter === fullName) {
                         newBalance = newBalance + 25;
                         newRooms[i].push(newBookedRooms[i].splice(j, 1).pop());
-                        break;
                 }
             }
-            
+            newBookedRooms[i].sort((a, b) => {
+                return a.price - b.price;
+            });
+            newRooms[i].sort((a, b) => {
+                return a.price - b.price;
+            })
         }
         setBookedRooms(newBookedRooms);
         setRooms(newRooms);
