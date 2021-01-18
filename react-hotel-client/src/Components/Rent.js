@@ -11,23 +11,21 @@ export default function Rent() {
         const newBookedRooms = [...bookedRooms];
         let newBalance = balance;
         const rentForm = Array.from(document.getElementById("rentForm").children)
-        console.log(rooms)
         
         for (const input of rentForm) {
             if (input.value === null || input.value === "") {
                 return alert(`Unable to submit your booking request due to missing fields.`)
-            }
-            
+            } 
         }
+
         const fullName = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
+
         for (let i = 0; i < newRooms.length; i++) {
             for (let j = 0; j < newRooms[i].length; j++) {
                 if (newRooms[i][j].room == document.querySelector("select").value) {
                     newRooms[i][j].renter = fullName;
                     newBalance = newBalance - newRooms[i][j].price - 25;
                     newBookedRooms[i].push(newRooms[i].splice(j, 1).pop());
-                    console.log(newBalance);
-                    
                     break;
                 }
             }
