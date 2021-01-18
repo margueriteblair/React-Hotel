@@ -38,7 +38,7 @@ export default function Rent() {
     }
     return (
         <div style={{margin: 10}}>
-            <h1>This is the rental page</h1>
+            <h1>Looking for a room to rent? You've come to the right place!</h1>
             <select style={{height: 30, width: 200, margin: 20}}>
                     {   
                         [...rooms.flat()].map((room) => {
@@ -52,10 +52,7 @@ export default function Rent() {
                     }
                 </select>
                 <Form/>
-
-            <button type="submit" style={{marginTop: 7}}
-            onClick={bookRoom}
-            >Book Room Now</button>
+            <button type="submit" style={{marginTop: 7}}nonClick={bookRoom}>Book Room Now</button>
         </div>
     )
 }
