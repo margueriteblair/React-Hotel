@@ -1,3 +1,5 @@
+<h1>Welcome to the React Hotel! ¡Bienvenidos al React Hotel!</h1>
+
 LOG:<br>
 2020-10-06<br>
 7:06 - Created form component<br>
