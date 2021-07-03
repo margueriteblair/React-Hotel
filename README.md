@@ -3,7 +3,7 @@
 Intermediate Final Project: React Hotel
 
 <h3>Overview:</h3><br>
-This React Front-end will show an accurate display of available rooms at the CareerDevs Hotel. There will be a total of sixteen available rooms at the CD Hotel. Four for each of the four floors. Your goal is to create an interface for renting and returning a room at the CD Hotel. The application should be set up to display different components. One will be a viewing component to rent, and another to return. The app needs to include a navigation bar with two buttons to display to the user to the aforementioned components. 
+This React Front-end will show an accurate display of available rooms at the CareerDevs Hotel. There will be a total of sixteen available rooms at the CD Hotel. Four for each of the four floors. Your goal is to create an interface for renting and returning a room at the CD Hotel. The application should be set up to display different components. One will be a viewing component to rent, and another to return. The app needs to include a navigation bar with two buttons to display to the user the aforementioned components. 
 
 <br><br>
 The prices to calculate the cost of the rooms is as following:<br>
