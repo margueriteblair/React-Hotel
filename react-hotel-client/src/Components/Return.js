@@ -37,6 +37,7 @@ export default function Return() {
         setBalance(newBalance);
         document.getElementById("returnFirstName").value = "";
         document.getElementById("returnLastName").value = "";
+        document.getElementById("comments-section").value = "";
     }
     return (
         <div>
@@ -67,6 +68,7 @@ export default function Return() {
             </br>
 
             <textarea
+            id="comments=section"
             placeholder="Leave a comment about your stay..."
             style={{height: 200, width: 400, marginTop: 20}}
             ></textarea>
